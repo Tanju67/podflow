@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 function Footer() {
@@ -38,15 +37,15 @@ function Footer() {
         <div>
           <h3 className="text-lg text-emerald-500">Quick Links</h3>
           <ul className="flex items-center gap-4">
-            <li className="uppercase">
+            <li className="z-50 uppercase">
               <NavLink to="/">Home</NavLink>
             </li>
             |
-            <li className="uppercase">
+            <li className="z-50 uppercase">
               <NavLink to="/about">About</NavLink>
             </li>
             |
-            <li className="uppercase">
+            <li className="z-50 uppercase">
               <NavLink to="/contact">Contact</NavLink>
             </li>
           </ul>

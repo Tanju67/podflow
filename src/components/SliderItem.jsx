@@ -4,14 +4,14 @@ function SliderItem({ person, index, activeIndex }) {
   return (
     <Link
       to={`/podcasters/${person.id}`}
-      className={`flex items-center justify-center ${
+      className={`z-50 flex items-center justify-center ${
         index === activeIndex ? "" : "opacity-30"
       }`}
     >
-      <div className="cursor-pointer rounded-4xl border-4 border-transparent transition-all duration-300 hover:border-amber-700 active:hover:border-4">
-        <div className="h-[300px] w-full overflow-hidden rounded-t-4xl sm:h-[220px] lg:h-[350px]">
+      <div className="w-full cursor-pointer rounded-4xl border-4 border-transparent transition-all duration-300 hover:border-amber-700 active:hover:border-4">
+        <div className="h-[400px] w-full overflow-hidden rounded-t-4xl lg:h-[350px] lg:w-auto">
           <img
-            className="rounded-t-2xl object-cover object-top transition-all duration-300 hover:scale-110 lg:rounded-t-4xl"
+            className="w-full rounded-t-2xl object-cover object-top transition-all duration-300 hover:scale-110 lg:rounded-t-4xl"
             src={person.img}
             alt=""
           />

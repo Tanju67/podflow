@@ -1,24 +1,49 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { people } from "../data/data";
 import SliderItem from "./SliderItem";
 
 function HeaderSlider() {
+  const [mounted, setMounted] = useState(false); // sadece client-side render
+  const [windowWidth, setWindowWidth] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
-  const { podcasterId } = useParams();
+
+  useEffect(() => {
+    setMounted(true); // sadece client
+    setWindowWidth(window.innerWidth); // slider responsive için
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow:
+      windowWidth > 1000
+        ? 3
+        : windowWidth > 800
+          ? 2
+          : windowWidth > 480
+            ? 1
+            : 1,
     slidesToScroll: 1,
     autoplay: true,
     speed: 100,
     autoplaySpeed: 3000,
     cssEase: "ease-in-out",
     centerMode: true,
-    centerPadding: "180px",
+    centerPadding:
+      windowWidth > 1350
+        ? "180px"
+        : windowWidth > 1000
+          ? "0"
+          : windowWidth > 800
+            ? "0"
+            : windowWidth > 480
+              ? "15%"
+              : "0px",
     arrows: false,
     afterChange: (current) => setActiveIndex(current),
     customPaging: (i) => (
@@ -31,59 +56,12 @@ function HeaderSlider() {
     appendDots: (dots) => (
       <div className="mt-4 flex justify-center gap-2">{dots}</div>
     ),
-    responsive: [
-      {
-        breakpoint: 1350,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-          autoplay: true,
-          speed: 100,
-          autoplaySpeed: 3000,
-          cssEase: "ease-in-out",
-          centerMode: true,
-          centerPadding: "0px",
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-          autoplay: true,
-          speed: 100,
-          autoplaySpeed: 3000,
-          cssEase: "ease-in-out",
-          centerMode: true,
-          centerPadding: "90px",
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 460,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-          autoplay: true,
-          speed: 100,
-          autoplaySpeed: 3000,
-          cssEase: "ease-in-out",
-          centerMode: false,
-          centerPadding: "90px",
-          arrows: false,
-        },
-      },
-    ],
   };
+
+  if (!mounted) return null; // SSR/initial render hatasını önler
+
   return (
-    <div className="slider-container">
+    <div className="slider-container" key={windowWidth}>
       <Slider {...settings}>
         {people.map((person, index) => (
           <SliderItem

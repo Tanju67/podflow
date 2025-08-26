@@ -21,7 +21,7 @@ function EpisodesItem({
   return (
     <Link
       to={`/episodes/${id}`}
-      className="font-secondary flex gap-4 rounded-4xl border-4 border-emerald-500 bg-amber-50 p-6 text-black transition-all duration-200 hover:scale-[1.02] hover:border-transparent hover:shadow-md hover:shadow-amber-500 max-[480px]:flex-col"
+      className="font-secondary z-50 flex gap-4 rounded-4xl border-4 border-emerald-500 bg-amber-50 p-6 text-black transition-all duration-200 hover:scale-[1.02] hover:border-transparent hover:shadow-md hover:shadow-amber-500 max-[480px]:flex-col"
     >
       <div className="flex w-[150px] flex-col max-[480px]:w-full">
         <div className="relative">

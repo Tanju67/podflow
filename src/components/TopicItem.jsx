@@ -4,7 +4,7 @@ function TopicItem({ id, img, title, ep }) {
   return (
     <Link
       to={`/topics/${id}`}
-      className="group font-secondary w-full cursor-pointer rounded-4xl p-4 transition-all duration-200 hover:bg-amber-50 hover:shadow-md hover:shadow-amber-500 sm:w-[46%] lg:flex-1"
+      className="group font-secondary z-50 w-full cursor-pointer rounded-4xl p-4 transition-all duration-200 hover:bg-amber-50 hover:shadow-md hover:shadow-amber-500 sm:w-[46%] lg:flex-1"
     >
       <img
         className="transtion-all h-[250px] w-full rounded-4xl object-cover object-center duration-200 group-hover:scale-90"

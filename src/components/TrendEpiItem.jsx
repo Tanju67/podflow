@@ -16,7 +16,7 @@ function TrendEpiItem({
   return (
     <Link
       to={`/episodes/${id}`}
-      className="font-secondary rounded-2xl bg-emerald-500 p-8 text-gray-800 transition-all duration-200 hover:scale-[1.02] hover:bg-emerald-100 hover:shadow-md hover:shadow-emerald-500 md:flex-1"
+      className="font-secondary z-50 rounded-2xl bg-emerald-500 p-8 text-gray-800 transition-all duration-200 hover:scale-[1.02] hover:bg-emerald-100 hover:shadow-md hover:shadow-emerald-500 md:flex-1"
     >
       <div className="relative">
         <img
