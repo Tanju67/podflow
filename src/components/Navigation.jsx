@@ -77,10 +77,12 @@ function Navigation() {
         <span className="hamburger-bottom"></span>
       </button>
       {/* overlay */}
-      <div
-        onClick={() => setHamburger(false)}
-        className="fixed top-0 right-0 bottom-0 left-0 z-20 h-screen bg-transparent lg:hidden"
-      ></div>
+      {hamburger && (
+        <div
+          onClick={() => setHamburger(false)}
+          className="fixed top-0 right-0 bottom-0 left-0 z-20 h-screen bg-transparent lg:hidden"
+        ></div>
+      )}
       {/* small screen menu */}
       <motion.ul
         variants={{

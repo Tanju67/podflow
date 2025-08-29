@@ -11,7 +11,7 @@ function Header() {
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
             Listen it everywhere. Explore your fav podcasts.
           </p>
-          <button className="font-secondary mt-10 rounded-full bg-amber-700 px-10 py-3 text-sm text-white hover:bg-amber-600 sm:text-base">
+          <button className="font-secondary z-[9999] mt-10 rounded-full bg-amber-700 px-10 py-3 text-sm text-white hover:bg-amber-600 sm:text-base">
             <a href="#episodes">Start listening</a>
           </button>
         </div>
