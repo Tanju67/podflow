@@ -2,7 +2,7 @@ import HeaderSlider from "./HeaderSlider";
 
 function Header() {
   return (
-    <section className="bg-custom min-h-screen w-full px-10 text-white md:px-20">
+    <section className="bg-custom min-h-screen w-full px-4 text-white sm:px-10 md:px-20">
       <div className="flex flex-col items-center justify-center gap-20 pt-60">
         <div className="max-w-[1400px] text-center">
           <h1 className="font-secondary text-4xl font-bold text-pretty text-white sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl">

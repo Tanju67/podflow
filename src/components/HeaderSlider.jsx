@@ -43,7 +43,7 @@ function HeaderSlider() {
             ? "0"
             : windowWidth > 480
               ? "15%"
-              : "0px",
+              : "80px",
     arrows: false,
     afterChange: (current) => setActiveIndex(current),
     customPaging: (i) => (

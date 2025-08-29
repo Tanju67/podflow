@@ -7,9 +7,9 @@ import logo from "../assets/logo.png";
 function Navigation() {
   const [hamburger, setHamburger] = useState(false);
   return (
-    <nav className="font-secondary text-md absolute top-0 right-0 left-0 mx-auto flex h-[100px] max-w-[1400px] items-center justify-between gap-10 px-10 text-white md:text-xl lg:px-0">
+    <nav className="font-secondary text-md absolute top-0 right-0 left-0 mx-auto flex h-[100px] max-w-[1400px] items-center justify-between gap-2 px-4 text-white sm:gap-10 sm:px-10 md:text-xl lg:px-0">
       <Link to="/" className="z-50 flex items-center gap-2 font-bold">
-        <img src={logo} alt="" className="h-30 w-30" />
+        <img src={logo} alt="" className="h-20 w-20 sm:h-30 sm:w-30" />
       </Link>
       <div className="flex w-full flex-1 justify-center">
         <input

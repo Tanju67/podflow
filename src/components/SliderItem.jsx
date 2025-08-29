@@ -9,7 +9,7 @@ function SliderItem({ person, index, activeIndex }) {
       }`}
     >
       <div className="w-full cursor-pointer rounded-4xl border-4 border-transparent transition-all duration-300 hover:border-amber-700 active:hover:border-4">
-        <div className="h-[400px] w-full overflow-hidden rounded-t-4xl lg:h-[350px] lg:w-auto">
+        <div className="h-[250px] w-full overflow-hidden rounded-t-4xl min-[500px]:h-[400px] lg:h-[350px] lg:w-auto">
           <img
             className="w-full rounded-t-2xl object-cover object-top transition-all duration-300 hover:scale-110 lg:rounded-t-4xl"
             src={person.img}
